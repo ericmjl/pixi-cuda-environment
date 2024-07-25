@@ -18,6 +18,10 @@ torchvision = "*"
 ipython = ">=8.26.0,<9"
 jax = "*"
 jaxlib = "* *cuda*"
+__cuda = "*"
 
 [system-requirements]
 cuda = "12.0"
+
+[tasks]
+cudatest = "python -c 'import jax.numpy as np; np.arange(3)'"
