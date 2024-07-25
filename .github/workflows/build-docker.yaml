@@ -16,7 +16,9 @@ jobs:
             - name: Build and push
               uses: docker/build-push-action@v6
               with:
-                push: false
-                tags: ericmjl/pixi-cuda-environment:latest
+                push: true
+                tags: ${{ secrets.DOCKERHUB_USERNAME }}/pixi-cuda-environment:latest
                 cache-from: type=gha
                 cache-to: type=gha,mode=max
+                username: ${{ secrets.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
