@@ -10,11 +10,14 @@ platforms = ["linux-64"]
 
 [dependencies]
 python = ">=3.10"
-jax = "*"
-jaxlib = "*"
-cuda-version = ">=12.5"
+cuda-version = "==12.1"
 cuda-libraries = "*"
 cudnn = "*"
-cuda-nvcc = "*"
 pytorch = "*"
 torchvision = "*"
+ipython = ">=8.26.0,<9"
+jax = "*"
+jaxlib = "* *cuda*"
+
+[system-requirements]
+cuda = "12.0"
