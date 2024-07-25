@@ -9,6 +9,17 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
+            - name: Docker meta
+              id: meta
+              uses: docker/metadata-action@v5
+              with:
+                # list of Docker images to use as base name for tags
+                images: |
+                  ericmjl/pixi-cuda-environment
+                # generate Docker tags based on the following events/attributes
+                tags: |
+                  type=sha
+
 
             - name: Set up QEMU
               uses: docker/setup-qemu-action@v3
@@ -26,7 +37,6 @@ jobs:
               uses: docker/build-push-action@v6
               with:
                 push: true
-                tags: |
-                  type=sha
+                tags: ${{ steps.meta.outputs.tags }}
                 cache-from: type=gha
                 cache-to: type=gha,mode=max
