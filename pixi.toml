@@ -19,6 +19,7 @@ torchvision = "*"
 ipython = ">=8.26.0,<9"
 jax = "*"
 jaxlib = "* *cuda*"
+numpy = "<1.25.0"
 __cuda = "*"
 
 [system-requirements]
