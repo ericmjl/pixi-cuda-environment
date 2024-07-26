@@ -11,4 +11,4 @@ RUN /usr/local/bin/pixi install
 # which in turn ensures that we have the environment activated.
 COPY entrypoint.sh /repo/entrypoint.sh
 RUN chmod 700 /repo/entrypoint.sh
-ENTRYPOINT [ "./repo/entrypoint.sh" ]
+ENTRYPOINT [ "/repo/entrypoint.sh" ]
