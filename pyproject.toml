@@ -24,7 +24,6 @@ ruff = ">=0.5.5,<0.6"
 pytest = ">=8.3.2,<8.4"
 ipython = ">=8.26.0,<9"
 jax = "*"
-pytorch = "*"
 
 # Feature Definitions
 [tool.pixi.feature.cuda-feature]
