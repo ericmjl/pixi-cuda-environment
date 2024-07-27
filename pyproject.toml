@@ -18,12 +18,14 @@ platforms = ["osx-arm64", "linux-64"]
 pixi-cuda-environment = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+test = "pytest"
 
 [tool.pixi.dependencies]
 ruff = ">=0.5.5,<0.6"
 pytest = ">=8.3.2,<8.4"
 ipython = ">=8.26.0,<9"
 jax = "*"
+pytest-cov = ">=5.0.0,<6"
 
 # Feature Definitions
 [tool.pixi.feature.cuda-feature]
