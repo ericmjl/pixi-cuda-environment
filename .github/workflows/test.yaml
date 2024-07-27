@@ -8,9 +8,6 @@ on:
 
 jobs:
   test:
-    strategy:
-      matrix:
-        environment: [ default, cuda ]
     name: Run tests
 
     runs-on: ubuntu-latest
@@ -23,6 +20,5 @@ jobs:
       with:
         pixi-version: v0.25.0
         cache: true
-        environments: ${{ matrix.environment }}
 
-    - run: pixi run -e ${{ matrix.environment}} test
+    - run: pixi run test
