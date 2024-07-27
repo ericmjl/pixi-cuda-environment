@@ -8,6 +8,9 @@ on:
 
 jobs:
   test:
+    strategy:
+      matrix:
+        environment: [ default, cuda ]
     name: Run tests
 
     runs-on: ubuntu-latest
@@ -23,4 +26,4 @@ jobs:
         # auth-host: prefix.dev
         # auth-token: ${{ secrets.PREFIX_DEV_TOKEN }}
 
-    - run: pixi run test
+    - run: pixi run -e ${{ matrix.environment}} test
