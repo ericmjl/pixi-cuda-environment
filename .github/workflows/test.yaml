@@ -23,5 +23,6 @@ jobs:
       with:
         pixi-version: v0.25.0
         cache: true
+        environments: ${{ matrix.environment }}
 
     - run: pixi run -e ${{ matrix.environment}} test
