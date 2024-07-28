@@ -22,7 +22,6 @@ jobs:
           type=sha
           type=raw,value=latest
 
-
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
 
