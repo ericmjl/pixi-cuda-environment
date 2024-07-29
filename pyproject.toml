@@ -24,7 +24,7 @@ test = "pytest"
 ruff = ">=0.5.5,<0.6"
 pytest = ">=8.3.2,<8.4"
 ipython = ">=8.26.0,<9"
-jax = "*"
+jax = ">=0.4.28"
 pytest-cov = ">=5.0.0,<6"
 
 # Feature Definitions
@@ -33,11 +33,7 @@ platforms = ["linux-64"]
 system-requirements = {cuda = "12"}
 
 [tool.pixi.feature.cuda-feature.dependencies]
-cuda-version = "==12.1"
-cuda-libraries = "*"
-cudnn = "*"
-jaxlib = "* *cuda*"
-__cuda = "*"
+jaxlib = { version = "*", build = "*cuda12*" }
 
 # Environments
 [tool.pixi.environments]
