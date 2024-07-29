@@ -2655,7 +2655,7 @@ packages:
   name: pixi-cuda-environment
   version: 0.1.0
   path: .
-  sha256: a025e2f0e1957053bd684afbbc40c50c6c0a7b64b3de0a3da679f34a63deffcf
+  sha256: 082b91cfabe9a342f38bf66804cf9502115fb841efddf274a353ae5c1537ac92
   requires_dist:
   - pandas>=2.2.2,<2.3
   - numpy>=2.0.1,<2.1
