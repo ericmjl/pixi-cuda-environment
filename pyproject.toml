@@ -28,13 +28,13 @@ jax = ">=0.4.28"
 pytest-cov = ">=5.0.0,<6"
 
 # Feature Definitions
-[tool.pixi.feature.cuda-feature]
+[tool.pixi.feature.cuda]
 platforms = ["linux-64"]
 system-requirements = {cuda = "12"}
 
-[tool.pixi.feature.cuda-feature.dependencies]
+[tool.pixi.feature.cuda.dependencies]
 jaxlib = { version = "*", build = "*cuda12*" }
 
 # Environments
 [tool.pixi.environments]
-cuda = ["cuda-feature"]
+cuda = ["cuda"]
