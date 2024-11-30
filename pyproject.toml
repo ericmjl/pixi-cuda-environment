@@ -16,6 +16,7 @@ platforms = ["osx-arm64", "linux-64"]
 
 [tool.pixi.pypi-dependencies]
 pixi-cuda-environment = { path = ".", editable = true }
+jax = { version = "*" }
 
 [tool.pixi.tasks]
 test = "pytest"
@@ -24,15 +25,14 @@ test = "pytest"
 ruff = ">=0.5.5,<0.6"
 pytest = ">=8.3.2,<8.4"
 ipython = ">=8.26.0,<9"
-jax = ">=0.4.28"
 pytest-cov = ">=5.0.0,<6"
 
 # Feature Definitions
 [tool.pixi.feature.cuda]
 system-requirements = {cuda = "12"}
 
-[tool.pixi.feature.cuda.target.linux-64.dependencies]
-jaxlib = { version = "*", build = "*cuda12*" }
+[tool.pixi.feature.cuda.target.linux-64.pypi-dependencies]
+jax = { version = "*", extras = ["cuda12"] }
 
 # Environments
 [tool.pixi.environments]
